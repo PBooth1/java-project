@@ -1,6 +1,7 @@
 pipeline {
   agent none
-
+//'agent none/any' states which node the pipeline should be run in, so either the master or slave-1
+  
   environment {
     MAJOR_VERSION = 1
   }
@@ -42,9 +43,11 @@ pipeline {
       steps {
         sh 'ant -f build.xml -v'
       }
+      //post build step
       post {
         success {
           archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
+          //if you plan to use a file in a different project you may want to track everywhere where that version of the file has been used
         }
       }
     }
