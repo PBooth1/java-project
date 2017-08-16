@@ -43,7 +43,7 @@ pipeline {
       steps {
         sh 'ant -f build.xml -v'
       }
-      //post build step
+      //post build step, post success rather than always to ensure archiving only occur when it is succceesful 
       post {
         success {
           archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
