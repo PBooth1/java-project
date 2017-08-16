@@ -1,5 +1,0 @@
-[user]
-	name = PBooth1
-	email = patricia.booth@atradius.com
-[http]
-	proxy = http://internetgateway.atradiusnet.com:8080
