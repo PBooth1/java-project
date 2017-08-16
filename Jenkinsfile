@@ -11,7 +11,7 @@ pipeline {
       agent any
 
       steps {
-        sayHello 'Awesome Student!'
+        sayHello 'Awesome Person!'
       }
     }
     stage('Git Information') {
